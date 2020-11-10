@@ -1,0 +1,16 @@
+/ Cart page wishlist btn
+
+if(!function_exists('yith_woocommerce_add_wishlist_button_name')) {
+    function yith_woocommerce_add_wishlist_button_name($product_name, $cart_item, $cart_item_key)
+    {
+
+        return $product_name .' '. do_shortcode( "[yith_wcwl_add_to_wishlist product_id=".$cart_item['product_id']."]");
+    }
+}
+
+    add_filter('woocommerce_cart_item_name', 'yith_woocommerce_add_wishlist_button_name', 10, 3);
+    
+============================================================================================================================================================================
+
+//   also add this plugin for add cart button on wishlist page
+    yith-woocommerce-wishlist-premium
